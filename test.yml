@@ -1,0 +1,9 @@
+# vim: ts=2 sw=2 expandtab autoindent
+
+- hosts: localhost
+
+  tasks:
+    - shell: pwd
+    - shell: pwd
+      become: yes
+      become_user: demo
