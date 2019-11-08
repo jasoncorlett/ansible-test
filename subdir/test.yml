@@ -1,9 +1,25 @@
-# vim: ts=2 sw=2 expandtab autoindent
+# vim: ts=2 sw=2 expandtab autoindent :
 
 - hosts: localhost
 
   tasks:
-    - shell: pwd
-    - shell: pwd
+    - shell: pwd; id
+
+    - shell: cat files/message.txt
+
+    - debug:
+        msg: "{{ playbook_dir }}"
+
+    - shell: pwd; id
       become: yes
       become_user: demo
+    
+    - shell: cat files/message.txt
+      become: yes
+      become_user: demo
+
+    - debug: 
+        msg: "{{ playbook_dir }}"
+      become: yes
+      become_user: demo
+
